@@ -15,6 +15,14 @@ require compute (i.e. terminal and extensions that need local filesystem access 
 Note that this also works on other editors that support loading custom JSON schemas, although I have yet to find any
 plugins/support outside VS Code for custom TOML schemas, but please let me know in the issue tracker.
 
+### Just the stable release?
+
+You can also access the config schema for Workers config via `unpkg.com` CDN endpoint below:
+
+```
+https://www.unpkg.com/wrangler/config-schema.json
+```
+
 ## Usage
 
 Install [Even Bettet TOML VS Code extension][ext] and add this line at the top of your `wrangler.toml` file:
