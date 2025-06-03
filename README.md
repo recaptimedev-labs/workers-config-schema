@@ -28,7 +28,7 @@ https://www.unpkg.com/wrangler/config-schema.json
 Install [Even Bettet TOML VS Code extension][ext] and add this line at the top of your `wrangler.toml` file:
 
 ```toml
-$schema = "https://raw.githubusercontent.com/recaptimedev-labs/workers-config-schema/refs/heads/main/config-schema.json"
+"$schema" = "https://raw.githubusercontent.com/recaptimedev-labs/workers-config-schema/refs/heads/main/config-schema.json"
 # rest of the config go here
 ```
 
