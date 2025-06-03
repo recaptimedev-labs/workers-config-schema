@@ -2354,6 +2354,13 @@
             "full_manual"
           ],
           "description": "How a rollout should be created. It supports the following modes:  - full_auto: The container application will be rolled out fully automatically.  - none: The container application won't have a roll out or update.  - manual: The container application will be rollout fully by manually actioning progress steps."
+        },
+        "dev_exposed_ports": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "description": "Ports to be exposed by the container application. Only applies to dev, on non-linux machines, and if the Dockerfile doesn't already declare exposed ports."
         }
       },
       "required": [
