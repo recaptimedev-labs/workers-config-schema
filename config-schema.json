@@ -2301,6 +2301,18 @@
                 ],
                 "additionalProperties": false
               }
+            },
+            "disk": {
+              "type": "object",
+              "properties": {
+                "size": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "size"
+              ],
+              "additionalProperties": false
             }
           },
           "required": [
