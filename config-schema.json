@@ -2463,6 +2463,11 @@
         "host": {
           "type": "string",
           "description": "Host to forward requests to, defaults to the host of the first route of project"
+        },
+        "enable_containers": {
+          "type": "boolean",
+          "description": "When developing, whether to build and connect to containers. This requires a Docker daemon to be running. Defaults to `true`.",
+          "default": true
         }
       },
       "additionalProperties": false
