@@ -805,6 +805,10 @@
               "certificate_id": {
                 "type": "string",
                 "description": "The uuid of the uploaded mTLS certificate"
+              },
+              "remote": {
+                "type": "boolean",
+                "description": "Whether the mtls fetcher should be remote or not (only available under `--x-mixed-mode`)"
               }
             },
             "required": [
@@ -904,6 +908,28 @@
             "additionalProperties": false
           },
           "description": "Specifies Secret Store bindings that are bound to this Worker environment.\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.",
+          "default": []
+        },
+        "unsafe_hello_world": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "binding": {
+                "type": "string",
+                "description": "The binding name used to refer to the bound service."
+              },
+              "enable_timer": {
+                "type": "boolean",
+                "description": "Whether the timer is enabled"
+              }
+            },
+            "required": [
+              "binding"
+            ],
+            "additionalProperties": false
+          },
+          "description": "**DO NOT USE**. Hello World Binding Config to serve as an explanatory example.\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.",
           "default": []
         },
         "pages_build_output_dir": {
@@ -1783,6 +1809,10 @@
               "certificate_id": {
                 "type": "string",
                 "description": "The uuid of the uploaded mTLS certificate"
+              },
+              "remote": {
+                "type": "boolean",
+                "description": "Whether the mtls fetcher should be remote or not (only available under `--x-mixed-mode`)"
               }
             },
             "required": [
@@ -1882,6 +1912,28 @@
             "additionalProperties": false
           },
           "description": "Specifies Secret Store bindings that are bound to this Worker environment.\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.",
+          "default": []
+        },
+        "unsafe_hello_world": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "binding": {
+                "type": "string",
+                "description": "The binding name used to refer to the bound service."
+              },
+              "enable_timer": {
+                "type": "boolean",
+                "description": "Whether the timer is enabled"
+              }
+            },
+            "required": [
+              "binding"
+            ],
+            "additionalProperties": false
+          },
+          "description": "**DO NOT USE**. Hello World Binding Config to serve as an explanatory example.\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.",
           "default": []
         }
       },
@@ -2093,8 +2145,18 @@
           "description": "How to handle requests that do not match an asset."
         },
         "run_worker_first": {
-          "type": "boolean",
-          "description": "If true, route every request to the User Worker, whether or not it matches an asset. If false, then respond to requests that match an asset with that asset directly."
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "type": "boolean"
+            }
+          ],
+          "description": "Matches will be routed to the User Worker, and matches to negative rules will go to the Asset Worker.\n\nCan also be `true`, indicating that every request should be routed to the User Worker."
         }
       },
       "additionalProperties": false
