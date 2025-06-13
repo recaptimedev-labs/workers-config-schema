@@ -163,8 +163,8 @@
         },
         "keep_names": {
           "type": "boolean",
-          "description": "Keep function names after javascript transpilations.",
-          "default": "{true}"
+          "description": "Set the `name` property to the original name for functions and classes renamed during minification.\n\nSee https://esbuild.github.io/api/#keep-names",
+          "default": true
         },
         "first_party_worker": {
           "type": "boolean",
@@ -1167,8 +1167,8 @@
         },
         "keep_names": {
           "type": "boolean",
-          "description": "Keep function names after javascript transpilations.",
-          "default": "{true}"
+          "description": "Set the `name` property to the original name for functions and classes renamed during minification.\n\nSee https://esbuild.github.io/api/#keep-names",
+          "default": true
         },
         "first_party_worker": {
           "type": "boolean",
