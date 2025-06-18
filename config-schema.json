@@ -303,7 +303,7 @@
           "items": {
             "$ref": "#/definitions/ContainerApp"
           },
-          "description": "Container related configuration",
+          "description": "Container related configuration\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.",
           "default": []
         },
         "kv_namespaces": {
@@ -1307,7 +1307,7 @@
           "items": {
             "$ref": "#/definitions/ContainerApp"
           },
-          "description": "Container related configuration",
+          "description": "Container related configuration\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.",
           "default": []
         },
         "kv_namespaces": {
@@ -2523,8 +2523,44 @@
           "type": "boolean",
           "description": "When developing, whether to build and connect to containers. This requires a Docker daemon to be running. Defaults to `true`.",
           "default": true
+        },
+        "container_engine": {
+          "$ref": "#/definitions/ContainerEngine",
+          "description": "Either the Docker unix socket i.e. `unix:/var/run/docker.sock` or a full configuration. Note that windows is only supported via WSL at the moment"
         }
       },
+      "additionalProperties": false
+    },
+    "ContainerEngine": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "localDocker": {
+              "$ref": "#/definitions/DockerConfiguration"
+            }
+          },
+          "required": [
+            "localDocker"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "DockerConfiguration": {
+      "type": "object",
+      "properties": {
+        "socketPath": {
+          "type": "string",
+          "description": "Socket used by miniflare to communicate with Docker"
+        }
+      },
+      "required": [
+        "socketPath"
+      ],
       "additionalProperties": false
     }
   },
