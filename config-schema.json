@@ -323,9 +323,9 @@
                 "type": "string",
                 "description": "The ID of the KV namespace used during `wrangler dev`"
               },
-              "remote": {
+              "experimental_remote": {
                 "type": "boolean",
-                "description": "Whether the KV namespace should be remote or not (only available under `--x-mixed-mode`)"
+                "description": "Whether the KV namespace should be remote or not (only available under `--x-remote-bindings`)"
               }
             },
             "required": [
@@ -385,9 +385,9 @@
                     "type": "number",
                     "description": "The number of seconds to wait before delivering a message"
                   },
-                  "remote": {
+                  "experimental_remote": {
                     "type": "boolean",
-                    "description": "Whether the Queue producer should be remote or not (only available under `--x-mixed-mode`)"
+                    "description": "Whether the Queue producer should be remote or not (only available under `--x-remote-bindings`)"
                   }
                 },
                 "required": [
@@ -479,9 +479,9 @@
                 "type": "string",
                 "description": "The jurisdiction that the bucket exists in. Default if not present."
               },
-              "remote": {
+              "experimental_remote": {
                 "type": "boolean",
-                "description": "Whether the R2 bucket should be remote or not (only available under `--x-mixed-mode`)"
+                "description": "Whether the R2 bucket should be remote or not (only available under `--x-remote-bindings`)"
               }
             },
             "required": [
@@ -525,9 +525,9 @@
                 "type": "string",
                 "description": "Internal use only."
               },
-              "remote": {
+              "experimental_remote": {
                 "type": "boolean",
-                "description": "Whether the D1 database should be remote or not (only available under `--x-mixed-mode`)"
+                "description": "Whether the D1 database should be remote or not (only available under `--x-remote-bindings`)"
               }
             },
             "required": [
@@ -551,9 +551,9 @@
                 "type": "string",
                 "description": "The name of the index."
               },
-              "remote": {
+              "experimental_remote": {
                 "type": "boolean",
-                "description": "Whether the Vectorize index should be remote or not (only available under `--x-mixed-mode`)"
+                "description": "Whether the Vectorize index should be remote or not (only available under `--x-remote-bindings`)"
               }
             },
             "required": [
@@ -618,9 +618,9 @@
                 "additionalProperties": {},
                 "description": "Optional properties that will be made available to the service via ctx.props."
               },
-              "remote": {
+              "experimental_remote": {
                 "type": "boolean",
-                "description": "Whether the service binding should be remote or not (only available under `--x-mixed-mode`)"
+                "description": "Whether the service binding should be remote or not (only available under `--x-remote-bindings`)"
               }
             },
             "required": [
@@ -660,9 +660,9 @@
             "binding": {
               "type": "string"
             },
-            "remote": {
+            "experimental_remote": {
               "type": "boolean",
-              "description": "Whether the Browser binding should be remote or not (only available under `--x-mixed-mode`)"
+              "description": "Whether the Browser binding should be remote or not (only available under `--x-remote-bindings`)"
             }
           },
           "required": [
@@ -681,9 +681,9 @@
             "staging": {
               "type": "boolean"
             },
-            "remote": {
+            "experimental_remote": {
               "type": "boolean",
-              "description": "Whether the AI binding should be remote or not (only available under `--x-mixed-mode`)"
+              "description": "Whether the AI binding should be remote or not (only available under `--x-remote-bindings`)"
             }
           },
           "required": [
@@ -699,9 +699,9 @@
             "binding": {
               "type": "string"
             },
-            "remote": {
+            "experimental_remote": {
               "type": "boolean",
-              "description": "Whether the Images binding should be remote or not (only available under `--x-mixed-mode`)"
+              "description": "Whether the Images binding should be remote or not (only available under `--x-remote-bindings`)"
             }
           },
           "required": [
@@ -806,9 +806,9 @@
                 "type": "string",
                 "description": "The uuid of the uploaded mTLS certificate"
               },
-              "remote": {
+              "experimental_remote": {
                 "type": "boolean",
-                "description": "Whether the mtls fetcher should be remote or not (only available under `--x-mixed-mode`)"
+                "description": "Whether the mtls fetcher should be remote or not (only available under `--x-remote-bindings`)"
               }
             },
             "required": [
@@ -845,9 +845,9 @@
                 "$ref": "#/definitions/DispatchNamespaceOutbound",
                 "description": "Details about the outbound Worker which will handle outbound requests from your namespace"
               },
-              "remote": {
+              "experimental_remote": {
                 "type": "boolean",
-                "description": "Whether the Dispatch Namespace should be remote or not (only available under `--x-mixed-mode`)"
+                "description": "Whether the Dispatch Namespace should be remote or not (only available under `--x-remote-bindings`)"
               }
             },
             "required": [
@@ -1327,9 +1327,9 @@
                 "type": "string",
                 "description": "The ID of the KV namespace used during `wrangler dev`"
               },
-              "remote": {
+              "experimental_remote": {
                 "type": "boolean",
-                "description": "Whether the KV namespace should be remote or not (only available under `--x-mixed-mode`)"
+                "description": "Whether the KV namespace should be remote or not (only available under `--x-remote-bindings`)"
               }
             },
             "required": [
@@ -1389,9 +1389,9 @@
                     "type": "number",
                     "description": "The number of seconds to wait before delivering a message"
                   },
-                  "remote": {
+                  "experimental_remote": {
                     "type": "boolean",
-                    "description": "Whether the Queue producer should be remote or not (only available under `--x-mixed-mode`)"
+                    "description": "Whether the Queue producer should be remote or not (only available under `--x-remote-bindings`)"
                   }
                 },
                 "required": [
@@ -1483,9 +1483,9 @@
                 "type": "string",
                 "description": "The jurisdiction that the bucket exists in. Default if not present."
               },
-              "remote": {
+              "experimental_remote": {
                 "type": "boolean",
-                "description": "Whether the R2 bucket should be remote or not (only available under `--x-mixed-mode`)"
+                "description": "Whether the R2 bucket should be remote or not (only available under `--x-remote-bindings`)"
               }
             },
             "required": [
@@ -1529,9 +1529,9 @@
                 "type": "string",
                 "description": "Internal use only."
               },
-              "remote": {
+              "experimental_remote": {
                 "type": "boolean",
-                "description": "Whether the D1 database should be remote or not (only available under `--x-mixed-mode`)"
+                "description": "Whether the D1 database should be remote or not (only available under `--x-remote-bindings`)"
               }
             },
             "required": [
@@ -1555,9 +1555,9 @@
                 "type": "string",
                 "description": "The name of the index."
               },
-              "remote": {
+              "experimental_remote": {
                 "type": "boolean",
-                "description": "Whether the Vectorize index should be remote or not (only available under `--x-mixed-mode`)"
+                "description": "Whether the Vectorize index should be remote or not (only available under `--x-remote-bindings`)"
               }
             },
             "required": [
@@ -1622,9 +1622,9 @@
                 "additionalProperties": {},
                 "description": "Optional properties that will be made available to the service via ctx.props."
               },
-              "remote": {
+              "experimental_remote": {
                 "type": "boolean",
-                "description": "Whether the service binding should be remote or not (only available under `--x-mixed-mode`)"
+                "description": "Whether the service binding should be remote or not (only available under `--x-remote-bindings`)"
               }
             },
             "required": [
@@ -1664,9 +1664,9 @@
             "binding": {
               "type": "string"
             },
-            "remote": {
+            "experimental_remote": {
               "type": "boolean",
-              "description": "Whether the Browser binding should be remote or not (only available under `--x-mixed-mode`)"
+              "description": "Whether the Browser binding should be remote or not (only available under `--x-remote-bindings`)"
             }
           },
           "required": [
@@ -1685,9 +1685,9 @@
             "staging": {
               "type": "boolean"
             },
-            "remote": {
+            "experimental_remote": {
               "type": "boolean",
-              "description": "Whether the AI binding should be remote or not (only available under `--x-mixed-mode`)"
+              "description": "Whether the AI binding should be remote or not (only available under `--x-remote-bindings`)"
             }
           },
           "required": [
@@ -1703,9 +1703,9 @@
             "binding": {
               "type": "string"
             },
-            "remote": {
+            "experimental_remote": {
               "type": "boolean",
-              "description": "Whether the Images binding should be remote or not (only available under `--x-mixed-mode`)"
+              "description": "Whether the Images binding should be remote or not (only available under `--x-remote-bindings`)"
             }
           },
           "required": [
@@ -1810,9 +1810,9 @@
                 "type": "string",
                 "description": "The uuid of the uploaded mTLS certificate"
               },
-              "remote": {
+              "experimental_remote": {
                 "type": "boolean",
-                "description": "Whether the mtls fetcher should be remote or not (only available under `--x-mixed-mode`)"
+                "description": "Whether the mtls fetcher should be remote or not (only available under `--x-remote-bindings`)"
               }
             },
             "required": [
@@ -1849,9 +1849,9 @@
                 "$ref": "#/definitions/DispatchNamespaceOutbound",
                 "description": "Details about the outbound Worker which will handle outbound requests from your namespace"
               },
-              "remote": {
+              "experimental_remote": {
                 "type": "boolean",
-                "description": "Whether the Dispatch Namespace should be remote or not (only available under `--x-mixed-mode`)"
+                "description": "Whether the Dispatch Namespace should be remote or not (only available under `--x-remote-bindings`)"
               }
             },
             "required": [
@@ -2240,9 +2240,9 @@
           "type": "string",
           "description": "The script where the Workflow is defined (if it's external to this Worker)"
         },
-        "remote": {
+        "experimental_remote": {
           "type": "boolean",
-          "description": "Whether the Workflow should be remote or not (only available under `--x-mixed-mode`)"
+          "description": "Whether the Workflow should be remote or not (only available under `--x-remote-bindings`)"
         }
       },
       "required": [
@@ -2311,7 +2311,8 @@
           "type": "string",
           "enum": [
             "regional",
-            "moon"
+            "moon",
+            "default"
           ],
           "description": "The scheduling policy of the application, default is regional"
         },
