@@ -2261,6 +2261,14 @@
         "location": {
           "type": "string"
         },
+        "instance_type": {
+          "type": "string",
+          "enum": [
+            "dev",
+            "basic",
+            "standard"
+          ]
+        },
         "vcpu": {
           "type": "number"
         },
@@ -2315,6 +2323,15 @@
             "default"
           ],
           "description": "The scheduling policy of the application, default is regional"
+        },
+        "instance_type": {
+          "type": "string",
+          "enum": [
+            "dev",
+            "basic",
+            "standard"
+          ],
+          "description": "The instance type to be used for the container. This sets preconfigured options for vcpu and memory"
         },
         "configuration": {
           "type": "object",
