@@ -2306,7 +2306,7 @@
           "additionalProperties": {
             "type": "string"
           },
-          "description": "Image variables to be passed along the image at build time."
+          "description": "Image variables available to the image at build-time only. For runtime env vars, refer to https://developers.cloudflare.com/containers/examples/env-vars-and-secrets/"
         },
         "class_name": {
           "type": "string",
