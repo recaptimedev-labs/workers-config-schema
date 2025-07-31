@@ -2323,13 +2323,36 @@
           "default": "default"
         },
         "instance_type": {
-          "type": "string",
-          "enum": [
-            "dev",
-            "basic",
-            "standard"
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "dev"
+            },
+            {
+              "type": "string",
+              "const": "basic"
+            },
+            {
+              "type": "string",
+              "const": "standard"
+            },
+            {
+              "type": "object",
+              "properties": {
+                "vcpu": {
+                  "type": "number"
+                },
+                "memory_mib": {
+                  "type": "number"
+                },
+                "disk_mb": {
+                  "type": "number"
+                }
+              },
+              "additionalProperties": false
+            }
           ],
-          "description": "The instance type to be used for the container. dev = 1/16 vCPU, 256 MiB memory, and 2 GB disk basic = 1/4 vCPU, 1 GiB memory, and 4 GB disk standard = 1/2 vCPU, 4 GiB memory, and 4 GB disk",
+          "description": "The instance type to be used for the container. Select from one of the following named instance types:  - dev: 1/16 vCPU, 256 MiB memory, and 2 GB disk  - basic: 1/4 vCPU, 1 GiB memory, and 4 GB disk  - standard: 1/2 vCPU, 4 GiB memory, and 4 GB disk\n\nCustomers on an enterprise plan have the additional option to set custom limits.",
           "default": "dev"
         },
         "rollout_step_percentage": {
