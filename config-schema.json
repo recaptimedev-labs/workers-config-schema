@@ -603,11 +603,7 @@
               },
               "service": {
                 "type": "string",
-                "description": "The name of the service."
-              },
-              "environment": {
-                "type": "string",
-                "description": "The environment of the service (e.g. production, staging, etc)."
+                "description": "The name of the service. To bind to a worker in a specific environment, you should use the format `<worker_name>-<environment_name>`."
               },
               "entrypoint": {
                 "type": "string",
@@ -1607,11 +1603,7 @@
               },
               "service": {
                 "type": "string",
-                "description": "The name of the service."
-              },
-              "environment": {
-                "type": "string",
-                "description": "The environment of the service (e.g. production, staging, etc)."
+                "description": "The name of the service. To bind to a worker in a specific environment, you should use the format `<worker_name>-<environment_name>`."
               },
               "entrypoint": {
                 "type": "string",
