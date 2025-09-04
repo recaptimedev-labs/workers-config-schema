@@ -61,7 +61,7 @@
         "preview_urls": {
           "type": "boolean",
           "description": "Whether we use <version>-<name>.<subdomain>.workers.dev to serve Preview URLs for your Worker.",
-          "default": true
+          "default": false
         },
         "routes": {
           "type": "array",
@@ -1061,7 +1061,7 @@
         "preview_urls": {
           "type": "boolean",
           "description": "Whether we use <version>-<name>.<subdomain>.workers.dev to serve Preview URLs for your Worker.",
-          "default": true
+          "default": false
         },
         "routes": {
           "type": "array",
