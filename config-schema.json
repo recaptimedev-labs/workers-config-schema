@@ -733,10 +733,50 @@
                 "type": "object",
                 "properties": {
                   "name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the binding provided to the Worker"
                   },
                   "type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The 'type' of the unsafe binding."
+                  },
+                  "dev": {
+                    "type": "object",
+                    "properties": {
+                      "plugin": {
+                        "type": "object",
+                        "properties": {
+                          "package": {
+                            "type": "string",
+                            "description": "Package is the bare specifier of the package that exposes plugins to integrate into Miniflare via a named `plugins` export.",
+                            "examples": [
+                              "@cloudflare/my-external-miniflare-plugin"
+                            ]
+                          },
+                          "name": {
+                            "type": "string",
+                            "description": "Plugin is the name of the plugin exposed by the package.",
+                            "examples": [
+                              "MY_UNSAFE_PLUGIN"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "package",
+                          "name"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "options": {
+                        "type": "object",
+                        "additionalProperties": {},
+                        "description": "Optional mapping of unsafe bindings names to options provided for the plugin."
+                      }
+                    },
+                    "required": [
+                      "plugin"
+                    ],
+                    "additionalProperties": false
                   }
                 },
                 "required": [
@@ -1737,10 +1777,50 @@
                 "type": "object",
                 "properties": {
                   "name": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The name of the binding provided to the Worker"
                   },
                   "type": {
-                    "type": "string"
+                    "type": "string",
+                    "description": "The 'type' of the unsafe binding."
+                  },
+                  "dev": {
+                    "type": "object",
+                    "properties": {
+                      "plugin": {
+                        "type": "object",
+                        "properties": {
+                          "package": {
+                            "type": "string",
+                            "description": "Package is the bare specifier of the package that exposes plugins to integrate into Miniflare via a named `plugins` export.",
+                            "examples": [
+                              "@cloudflare/my-external-miniflare-plugin"
+                            ]
+                          },
+                          "name": {
+                            "type": "string",
+                            "description": "Plugin is the name of the plugin exposed by the package.",
+                            "examples": [
+                              "MY_UNSAFE_PLUGIN"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "package",
+                          "name"
+                        ],
+                        "additionalProperties": false
+                      },
+                      "options": {
+                        "type": "object",
+                        "additionalProperties": {},
+                        "description": "Optional mapping of unsafe bindings names to options provided for the plugin."
+                      }
+                    },
+                    "required": [
+                      "plugin"
+                    ],
+                    "additionalProperties": false
                   }
                 },
                 "required": [
