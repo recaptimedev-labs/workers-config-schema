@@ -356,6 +356,13 @@
                 },
                 "description": "If this binding should be restricted to a set of verified addresses"
               },
+              "allowed_sender_addresses": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "If this binding should be restricted to a set of sender addresses"
+              },
               "remote": {
                 "type": "boolean",
                 "description": "Whether the binding should be remote or not"
@@ -1446,6 +1453,13 @@
                   "type": "string"
                 },
                 "description": "If this binding should be restricted to a set of verified addresses"
+              },
+              "allowed_sender_addresses": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "If this binding should be restricted to a set of sender addresses"
               },
               "remote": {
                 "type": "boolean",
