@@ -325,7 +325,7 @@
               },
               "remote": {
                 "type": "boolean",
-                "description": "Whether the KV namespace should be remote or not"
+                "description": "Whether the KV namespace should be remote or not in local development"
               }
             },
             "required": [
@@ -365,7 +365,7 @@
               },
               "remote": {
                 "type": "boolean",
-                "description": "Whether the binding should be remote or not"
+                "description": "Whether the binding should be remote or not in local development"
               }
             },
             "required": [
@@ -398,7 +398,7 @@
                   },
                   "remote": {
                     "type": "boolean",
-                    "description": "Whether the Queue producer should be remote or not"
+                    "description": "Whether the Queue producer should be remote or not in local development"
                   }
                 },
                 "required": [
@@ -492,7 +492,7 @@
               },
               "remote": {
                 "type": "boolean",
-                "description": "Whether the R2 bucket should be remote or not"
+                "description": "Whether the R2 bucket should be remote or not in local development"
               }
             },
             "required": [
@@ -538,7 +538,7 @@
               },
               "remote": {
                 "type": "boolean",
-                "description": "Whether the D1 database should be remote or not"
+                "description": "Whether the D1 database should be remote or not in local development"
               }
             },
             "required": [
@@ -564,7 +564,7 @@
               },
               "remote": {
                 "type": "boolean",
-                "description": "Whether the Vectorize index should be remote or not"
+                "description": "Whether the Vectorize index should be remote or not in local development"
               }
             },
             "required": [
@@ -627,7 +627,7 @@
               },
               "remote": {
                 "type": "boolean",
-                "description": "Whether the service binding should be remote or not"
+                "description": "Whether the service binding should be remote or not in local development"
               }
             },
             "required": [
@@ -669,7 +669,7 @@
             },
             "remote": {
               "type": "boolean",
-              "description": "Whether the Browser binding should be remote or not"
+              "description": "Whether the Browser binding should be remote or not in local development"
             }
           },
           "required": [
@@ -690,7 +690,7 @@
             },
             "remote": {
               "type": "boolean",
-              "description": "Whether the AI binding should be remote or not"
+              "description": "Whether the AI binding should be remote or not in local development"
             }
           },
           "required": [
@@ -708,7 +708,7 @@
             },
             "remote": {
               "type": "boolean",
-              "description": "Whether the Images binding should be remote or not"
+              "description": "Whether the Images binding should be remote or not in local development"
             }
           },
           "required": [
@@ -855,7 +855,7 @@
               },
               "remote": {
                 "type": "boolean",
-                "description": "Whether the mtls fetcher should be remote or not"
+                "description": "Whether the mtls fetcher should be remote or not in local development"
               }
             },
             "required": [
@@ -894,7 +894,7 @@
               },
               "remote": {
                 "type": "boolean",
-                "description": "Whether the Dispatch Namespace should be remote or not"
+                "description": "Whether the Dispatch Namespace should be remote or not in local development"
               }
             },
             "required": [
@@ -918,6 +918,10 @@
               "pipeline": {
                 "type": "string",
                 "description": "Name of the Pipeline to bind"
+              },
+              "remote": {
+                "type": "boolean",
+                "description": "Whether the pipeline should be remote or not in local development"
               }
             },
             "required": [
@@ -1024,6 +1028,24 @@
             "additionalProperties": false
           },
           "description": "Specifies rate limit bindings that are bound to this Worker environment.\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.",
+          "default": []
+        },
+        "worker_loaders": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "binding": {
+                "type": "string",
+                "description": "The binding name used to refer to the Worker Loader in the Worker."
+              }
+            },
+            "required": [
+              "binding"
+            ],
+            "additionalProperties": false
+          },
+          "description": "Specifies Worker Loader bindings that are bound to this Worker environment.\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.",
           "default": []
         },
         "pages_build_output_dir": {
@@ -1423,7 +1445,7 @@
               },
               "remote": {
                 "type": "boolean",
-                "description": "Whether the KV namespace should be remote or not"
+                "description": "Whether the KV namespace should be remote or not in local development"
               }
             },
             "required": [
@@ -1463,7 +1485,7 @@
               },
               "remote": {
                 "type": "boolean",
-                "description": "Whether the binding should be remote or not"
+                "description": "Whether the binding should be remote or not in local development"
               }
             },
             "required": [
@@ -1496,7 +1518,7 @@
                   },
                   "remote": {
                     "type": "boolean",
-                    "description": "Whether the Queue producer should be remote or not"
+                    "description": "Whether the Queue producer should be remote or not in local development"
                   }
                 },
                 "required": [
@@ -1590,7 +1612,7 @@
               },
               "remote": {
                 "type": "boolean",
-                "description": "Whether the R2 bucket should be remote or not"
+                "description": "Whether the R2 bucket should be remote or not in local development"
               }
             },
             "required": [
@@ -1636,7 +1658,7 @@
               },
               "remote": {
                 "type": "boolean",
-                "description": "Whether the D1 database should be remote or not"
+                "description": "Whether the D1 database should be remote or not in local development"
               }
             },
             "required": [
@@ -1662,7 +1684,7 @@
               },
               "remote": {
                 "type": "boolean",
-                "description": "Whether the Vectorize index should be remote or not"
+                "description": "Whether the Vectorize index should be remote or not in local development"
               }
             },
             "required": [
@@ -1725,7 +1747,7 @@
               },
               "remote": {
                 "type": "boolean",
-                "description": "Whether the service binding should be remote or not"
+                "description": "Whether the service binding should be remote or not in local development"
               }
             },
             "required": [
@@ -1767,7 +1789,7 @@
             },
             "remote": {
               "type": "boolean",
-              "description": "Whether the Browser binding should be remote or not"
+              "description": "Whether the Browser binding should be remote or not in local development"
             }
           },
           "required": [
@@ -1788,7 +1810,7 @@
             },
             "remote": {
               "type": "boolean",
-              "description": "Whether the AI binding should be remote or not"
+              "description": "Whether the AI binding should be remote or not in local development"
             }
           },
           "required": [
@@ -1806,7 +1828,7 @@
             },
             "remote": {
               "type": "boolean",
-              "description": "Whether the Images binding should be remote or not"
+              "description": "Whether the Images binding should be remote or not in local development"
             }
           },
           "required": [
@@ -1953,7 +1975,7 @@
               },
               "remote": {
                 "type": "boolean",
-                "description": "Whether the mtls fetcher should be remote or not"
+                "description": "Whether the mtls fetcher should be remote or not in local development"
               }
             },
             "required": [
@@ -1992,7 +2014,7 @@
               },
               "remote": {
                 "type": "boolean",
-                "description": "Whether the Dispatch Namespace should be remote or not"
+                "description": "Whether the Dispatch Namespace should be remote or not in local development"
               }
             },
             "required": [
@@ -2016,6 +2038,10 @@
               "pipeline": {
                 "type": "string",
                 "description": "Name of the Pipeline to bind"
+              },
+              "remote": {
+                "type": "boolean",
+                "description": "Whether the pipeline should be remote or not in local development"
               }
             },
             "required": [
@@ -2122,6 +2148,24 @@
             "additionalProperties": false
           },
           "description": "Specifies rate limit bindings that are bound to this Worker environment.\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.",
+          "default": []
+        },
+        "worker_loaders": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "binding": {
+                "type": "string",
+                "description": "The binding name used to refer to the Worker Loader in the Worker."
+              }
+            },
+            "required": [
+              "binding"
+            ],
+            "additionalProperties": false
+          },
+          "description": "Specifies Worker Loader bindings that are bound to this Worker environment.\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.",
           "default": []
         }
       },
@@ -2469,7 +2513,7 @@
         },
         "remote": {
           "type": "boolean",
-          "description": "Whether the Workflow should be remote or not"
+          "description": "Whether the Workflow should be remote or not in local development"
         }
       },
       "required": [
