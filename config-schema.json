@@ -1048,6 +1048,33 @@
           "description": "Specifies Worker Loader bindings that are bound to this Worker environment.\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.",
           "default": []
         },
+        "vpc_services": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "binding": {
+                "type": "string",
+                "description": "The binding name used to refer to the VPC service in the Worker."
+              },
+              "service_id": {
+                "type": "string",
+                "description": "The service ID of the VPC connectivity service."
+              },
+              "remote": {
+                "type": "boolean",
+                "description": "Whether the VPC service is remote or not"
+              }
+            },
+            "required": [
+              "binding",
+              "service_id"
+            ],
+            "additionalProperties": false
+          },
+          "description": "Specifies VPC services that are bound to this Worker environment.\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.",
+          "default": []
+        },
         "pages_build_output_dir": {
           "type": "string",
           "description": "The directory of static assets to serve.\n\nThe presence of this field in a Wrangler configuration file indicates a Pages project, and will prompt the handling of the configuration file according to the Pages-specific validation rules."
@@ -2166,6 +2193,33 @@
             "additionalProperties": false
           },
           "description": "Specifies Worker Loader bindings that are bound to this Worker environment.\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.",
+          "default": []
+        },
+        "vpc_services": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "binding": {
+                "type": "string",
+                "description": "The binding name used to refer to the VPC service in the Worker."
+              },
+              "service_id": {
+                "type": "string",
+                "description": "The service ID of the VPC connectivity service."
+              },
+              "remote": {
+                "type": "boolean",
+                "description": "Whether the VPC service is remote or not"
+              }
+            },
+            "required": [
+              "binding",
+              "service_id"
+            ],
+            "additionalProperties": false
+          },
+          "description": "Specifies VPC services that are bound to this Worker environment.\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.",
           "default": []
         }
       },
