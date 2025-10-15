@@ -718,6 +718,24 @@
           "description": "Binding to Cloudflare Images\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.\n\nFor reference, see https://developers.cloudflare.com/workers/wrangler/configuration/#images",
           "default": {}
         },
+        "media": {
+          "type": "object",
+          "properties": {
+            "binding": {
+              "type": "string"
+            },
+            "remote": {
+              "type": "boolean",
+              "description": "Whether the Media binding should be remote or not"
+            }
+          },
+          "required": [
+            "binding"
+          ],
+          "additionalProperties": false,
+          "description": "Binding to Cloudflare Media Transformations\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.",
+          "default": {}
+        },
         "version_metadata": {
           "type": "object",
           "properties": {
@@ -1863,6 +1881,24 @@
           ],
           "additionalProperties": false,
           "description": "Binding to Cloudflare Images\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.\n\nFor reference, see https://developers.cloudflare.com/workers/wrangler/configuration/#images",
+          "default": {}
+        },
+        "media": {
+          "type": "object",
+          "properties": {
+            "binding": {
+              "type": "string"
+            },
+            "remote": {
+              "type": "boolean",
+              "description": "Whether the Media binding should be remote or not"
+            }
+          },
+          "required": [
+            "binding"
+          ],
+          "additionalProperties": false,
+          "description": "Binding to Cloudflare Media Transformations\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.",
           "default": {}
         },
         "version_metadata": {
