@@ -248,6 +248,26 @@
           ],
           "description": "Specify the compliance region mode of the Worker.\n\nAlthough if the user does not specify a compliance region, the default is `public`, it can be set to `undefined` in configuration to delegate to the CLOUDFLARE_COMPLIANCE_REGION environment variable."
         },
+        "python_modules": {
+          "type": "object",
+          "properties": {
+            "exclude": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "A list of glob patterns to exclude files from the python_modules directory when bundling.\n\nPatterns are relative to the python_modules directory and use glob syntax.",
+              "default": [
+                "***.pyc"
+              ]
+            }
+          },
+          "required": [
+            "exclude"
+          ],
+          "additionalProperties": false,
+          "description": "Configuration for Python modules."
+        },
         "define": {
           "type": "object",
           "additionalProperties": {
@@ -1412,6 +1432,26 @@
             "fedramp_high"
           ],
           "description": "Specify the compliance region mode of the Worker.\n\nAlthough if the user does not specify a compliance region, the default is `public`, it can be set to `undefined` in configuration to delegate to the CLOUDFLARE_COMPLIANCE_REGION environment variable."
+        },
+        "python_modules": {
+          "type": "object",
+          "properties": {
+            "exclude": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "A list of glob patterns to exclude files from the python_modules directory when bundling.\n\nPatterns are relative to the python_modules directory and use glob syntax.",
+              "default": [
+                "***.pyc"
+              ]
+            }
+          },
+          "required": [
+            "exclude"
+          ],
+          "additionalProperties": false,
+          "description": "Configuration for Python modules."
         },
         "define": {
           "type": "object",
