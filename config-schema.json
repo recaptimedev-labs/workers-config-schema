@@ -283,7 +283,9 @@
               {
                 "type": "string"
               },
-              {}
+              {
+                "$ref": "#/definitions/Json"
+              }
             ]
           },
           "description": "A map of environment variables to set when deploying your Worker.\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.\n\nFor reference, see https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables",
@@ -1468,7 +1470,9 @@
               {
                 "type": "string"
               },
-              {}
+              {
+                "$ref": "#/definitions/Json"
+              }
             ]
           },
           "description": "A map of environment variables to set when deploying your Worker.\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.\n\nFor reference, see https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables",
@@ -2592,6 +2596,34 @@
         }
       },
       "additionalProperties": false
+    },
+    "Json": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        },
+        {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Json"
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/definitions/Json"
+          }
+        }
+      ]
     },
     "DurableObjectBindings": {
       "type": "array",
