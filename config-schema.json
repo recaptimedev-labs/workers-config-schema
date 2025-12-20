@@ -2971,6 +2971,25 @@
           },
           "description": "SSH public keys to put in the container's authorized_keys file."
         },
+        "trusted_user_ca_keys": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "public_key": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "public_key"
+            ],
+            "additionalProperties": false
+          },
+          "description": "Trusted user CA keys to put in the container's trusted_user_ca_keys file."
+        },
         "rollout_step_percentage": {
           "anyOf": [
             {
@@ -3104,6 +3123,11 @@
         "container_engine": {
           "$ref": "#/definitions/ContainerEngine",
           "description": "Either the Docker unix socket i.e. `unix:///var/run/docker.sock` or a full configuration. Note that windows is only supported via WSL at the moment"
+        },
+        "generate_types": {
+          "type": "boolean",
+          "description": "Re-generate your worker types when your Wrangler configuration file changes.",
+          "default": false
         }
       },
       "additionalProperties": false
