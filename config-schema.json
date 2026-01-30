@@ -2561,11 +2561,12 @@
         "cpu_ms": {
           "type": "number",
           "description": "Maximum allowed CPU time for a Worker's invocation in milliseconds"
+        },
+        "subrequests": {
+          "type": "number",
+          "description": "Maximum allowed number of fetch requests that a Worker's invocation can execute"
         }
       },
-      "required": [
-        "cpu_ms"
-      ],
       "additionalProperties": false
     },
     "Rule": {
