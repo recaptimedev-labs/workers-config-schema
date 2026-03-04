@@ -353,12 +353,11 @@
               "items": {
                 "type": "string"
               },
-              "description": "List of secret names that are required by your Worker. When defined, this property:\n- Replaces .dev.vars/.env inference for type generation\n- Enables deploy-time validation to ensure secrets are configured\n- Enables local dev validation with warnings for missing secrets"
+              "description": "List of secret names that are required by your Worker. When defined, this property:\n- Replaces .dev.vars/.env/process.env inference for type generation\n- Enables local dev validation with warnings for missing secrets"
             }
           },
           "additionalProperties": false,
-          "description": "Secrets configuration.\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.",
-          "default": "undefined"
+          "description": "Secrets configuration (experimental).\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment."
         },
         "durable_objects": {
           "type": "object",
@@ -1617,12 +1616,11 @@
               "items": {
                 "type": "string"
               },
-              "description": "List of secret names that are required by your Worker. When defined, this property:\n- Replaces .dev.vars/.env inference for type generation\n- Enables deploy-time validation to ensure secrets are configured\n- Enables local dev validation with warnings for missing secrets"
+              "description": "List of secret names that are required by your Worker. When defined, this property:\n- Replaces .dev.vars/.env/process.env inference for type generation\n- Enables local dev validation with warnings for missing secrets"
             }
           },
           "additionalProperties": false,
-          "description": "Secrets configuration.\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.",
-          "default": "undefined"
+          "description": "Secrets configuration (experimental).\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment."
         },
         "durable_objects": {
           "type": "object",
@@ -2831,6 +2829,17 @@
         "remote": {
           "type": "boolean",
           "description": "Whether the Workflow should be remote or not in local development"
+        },
+        "limits": {
+          "type": "object",
+          "properties": {
+            "steps": {
+              "type": "number",
+              "description": "Maximum number of steps a Workflow instance can execute"
+            }
+          },
+          "additionalProperties": false,
+          "description": "Optional limits for the Workflow"
         }
       },
       "required": [
@@ -3197,6 +3206,10 @@
         "socketPath": {
           "type": "string",
           "description": "Socket used by miniflare to communicate with Docker"
+        },
+        "containerEgressInterceptorImage": {
+          "type": "string",
+          "description": "Docker image name for the container egress interceptor sidecar"
         }
       },
       "required": [
