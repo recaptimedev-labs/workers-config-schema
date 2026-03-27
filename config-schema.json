@@ -510,7 +510,8 @@
                   },
                   "type": {
                     "type": "string",
-                    "description": "The consumer type, e.g., worker, http-pull, r2-bucket, etc. Default is worker."
+                    "const": "worker",
+                    "description": "The consumer type. Only \"worker\" is supported in wrangler config. Default is \"worker\"."
                   },
                   "max_batch_size": {
                     "type": "number",
@@ -1791,7 +1792,8 @@
                   },
                   "type": {
                     "type": "string",
-                    "description": "The consumer type, e.g., worker, http-pull, r2-bucket, etc. Default is worker."
+                    "const": "worker",
+                    "description": "The consumer type. Only \"worker\" is supported in wrangler config. Default is \"worker\"."
                   },
                   "max_batch_size": {
                     "type": "number",
