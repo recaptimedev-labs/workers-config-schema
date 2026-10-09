@@ -1,6 +1,10 @@
 name: "nightly schema generator"
 
 on:
+  push:
+    branches: [main]
+    paths:
+    - .github/workflows/config-schema-generator.yml
   workflow_dispatch:
   schedule:
     - cron: 0 0 * * *
@@ -30,7 +34,9 @@ jobs:
       with:
         node-version: 22
     - name: Setup pnpm
-      uses: pnpm/action-setup@v4.1.0
+      uses: pnpm/setup@v3
+      with:
+        version: "12.10.1"
     - name: Generate config schema
       run: |
         cd ${{github.workspace}}/workers-sdk && pnpm install
