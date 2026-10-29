@@ -1042,6 +1042,11 @@
                 "type": "string",
                 "description": "The name of this dataset to write to.",
                 "markdownDescription": "The name of this dataset to write to."
+              },
+              "remote": {
+                "type": "boolean",
+                "description": "Whether the dataset should be remote or not in local development",
+                "markdownDescription": "Whether the dataset should be remote or not in local development"
               }
             },
             "required": [
@@ -2897,6 +2902,11 @@
                 "type": "string",
                 "description": "The name of this dataset to write to.",
                 "markdownDescription": "The name of this dataset to write to."
+              },
+              "remote": {
+                "type": "boolean",
+                "description": "Whether the dataset should be remote or not in local development",
+                "markdownDescription": "Whether the dataset should be remote or not in local development"
               }
             },
             "required": [
@@ -4432,19 +4442,19 @@
       "type": "object",
       "properties": {
         "logpush": {
-          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-622902004818536"
+          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-623842004818536"
         },
         "observability": {
-          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-622902004818536"
+          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-623842004818536"
         },
         "limits": {
-          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-622902004818536"
+          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-623842004818536"
         },
         "placement": {
-          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-622902004818536"
+          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-623842004818536"
         },
         "cache": {
-          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-622902004818536"
+          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-623842004818536"
         },
         "define": {
           "type": "object",
@@ -5098,6 +5108,11 @@
                 "type": "string",
                 "description": "The name of this dataset to write to.",
                 "markdownDescription": "The name of this dataset to write to."
+              },
+              "remote": {
+                "type": "boolean",
+                "description": "Whether the dataset should be remote or not in local development",
+                "markdownDescription": "Whether the dataset should be remote or not in local development"
               }
             },
             "required": [
@@ -5814,7 +5829,7 @@
       "description": "Configuration for Worker Previews.\n\nThis defines the settings used when creating Preview deployments. Previews are branches of your Worker's main instance used to test features during feature development outside of production.\n\nThe `previews` block contains any intentionally divergent configuration intended solely for Previews, including:\n- All non-inheritable properties (environment variables and bindings like KV, D1, R2, etc.)\n- Select inheritable properties: `logpush`, `observability`, `limits`, `placement`, `cache`",
       "markdownDescription": "Configuration for Worker Previews.\n\nThis defines the settings used when creating Preview deployments.\nPreviews are branches of your Worker's main instance used to test features\nduring feature development outside of production.\n\nThe `previews` block contains any intentionally divergent configuration intended solely for Previews, including:\n- All non-inheritable properties (environment variables and bindings like KV, D1, R2, etc.)\n- Select inheritable properties: `logpush`, `observability`, `limits`, `placement`, `cache`"
     },
-    "interface-769040647-14884-25493-769040647-0-622902004818536": {
+    "interface-769040647-14884-25493-769040647-0-623842004818536": {
       "type": "object",
       "properties": {
         "name": {
