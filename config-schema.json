@@ -786,6 +786,11 @@
                 "description": "The UUID of this D1 database (not required).",
                 "markdownDescription": "The UUID of this D1 database (not required)."
               },
+              "jurisdiction": {
+                "type": "string",
+                "description": "The jurisdiction where an automatically provisioned D1 database will be created.",
+                "markdownDescription": "The jurisdiction where an automatically provisioned D1 database will be created."
+              },
               "preview_database_id": {
                 "type": "string",
                 "description": "The UUID of this D1 database for Wrangler Dev (if specified).",
@@ -2646,6 +2651,11 @@
                 "description": "The UUID of this D1 database (not required).",
                 "markdownDescription": "The UUID of this D1 database (not required)."
               },
+              "jurisdiction": {
+                "type": "string",
+                "description": "The jurisdiction where an automatically provisioned D1 database will be created.",
+                "markdownDescription": "The jurisdiction where an automatically provisioned D1 database will be created."
+              },
               "preview_database_id": {
                 "type": "string",
                 "description": "The UUID of this D1 database for Wrangler Dev (if specified).",
@@ -4442,19 +4452,19 @@
       "type": "object",
       "properties": {
         "logpush": {
-          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-627292004818536"
+          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-628442004818536"
         },
         "observability": {
-          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-627292004818536"
+          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-628442004818536"
         },
         "limits": {
-          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-627292004818536"
+          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-628442004818536"
         },
         "placement": {
-          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-627292004818536"
+          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-628442004818536"
         },
         "cache": {
-          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-627292004818536"
+          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-628442004818536"
         },
         "define": {
           "type": "object",
@@ -4851,6 +4861,11 @@
                 "type": "string",
                 "description": "The UUID of this D1 database (not required).",
                 "markdownDescription": "The UUID of this D1 database (not required)."
+              },
+              "jurisdiction": {
+                "type": "string",
+                "description": "The jurisdiction where an automatically provisioned D1 database will be created.",
+                "markdownDescription": "The jurisdiction where an automatically provisioned D1 database will be created."
               },
               "preview_database_id": {
                 "type": "string",
@@ -5829,7 +5844,7 @@
       "description": "Configuration for Worker Previews.\n\nThis defines the settings used when creating Preview deployments. Previews are branches of your Worker's main instance used to test features during feature development outside of production.\n\nThe `previews` block contains any intentionally divergent configuration intended solely for Previews, including:\n- All non-inheritable properties (environment variables and bindings like KV, D1, R2, etc.)\n- Select inheritable properties: `logpush`, `observability`, `limits`, `placement`, `cache`",
       "markdownDescription": "Configuration for Worker Previews.\n\nThis defines the settings used when creating Preview deployments.\nPreviews are branches of your Worker's main instance used to test features\nduring feature development outside of production.\n\nThe `previews` block contains any intentionally divergent configuration intended solely for Previews, including:\n- All non-inheritable properties (environment variables and bindings like KV, D1, R2, etc.)\n- Select inheritable properties: `logpush`, `observability`, `limits`, `placement`, `cache`"
     },
-    "interface-769040647-14884-25493-769040647-0-627292004818536": {
+    "interface-769040647-14884-25493-769040647-0-628442004818536": {
       "type": "object",
       "properties": {
         "name": {
