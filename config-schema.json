@@ -1136,14 +1136,35 @@
               "type": "boolean",
               "description": "Whether the Images binding should be remote or not in local development",
               "markdownDescription": "Whether the Images binding should be remote or not in local development"
+            },
+            "url_transformations": {
+              "type": "object",
+              "properties": {
+                "enabled": {
+                  "type": "boolean",
+                  "description": "Whether URL transformations are enabled for this Worker",
+                  "markdownDescription": "Whether URL transformations are enabled for this Worker"
+                },
+                "allowed_origins": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "Origins that images may be fetched from, in addition to the Worker's own zone, e.g. `\"images.example.com\"`, `\"*.example.com\"` or `\"example.com/images\"`. Don't include the protocol. Use `[\"*\"]` to allow any origin. At most 10 entries.",
+                  "markdownDescription": "Origins that images may be fetched from, in addition to the Worker's own zone,\ne.g. `\"images.example.com\"`, `\"*.example.com\"` or `\"example.com/images\"`.\nDon't include the protocol. Use `[\"*\"]` to allow any origin. At most 10 entries."
+                }
+              },
+              "required": [
+                "enabled"
+              ],
+              "additionalProperties": false,
+              "description": "Controls `/cdn-cgi/image/` URL transformations for requests served by this Worker",
+              "markdownDescription": "Controls `/cdn-cgi/image/` URL transformations for requests served by this Worker"
             }
           },
-          "required": [
-            "binding"
-          ],
           "additionalProperties": false,
-          "description": "Binding to Cloudflare Images\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.\n\nFor reference, see https://developers.cloudflare.com/workers/wrangler/configuration/#images",
-          "markdownDescription": "Binding to Cloudflare Images\n\nNOTE: This field is not automatically inherited from the top level environment,\nand so must be specified in every named environment.\n\nFor reference, see https://developers.cloudflare.com/workers/wrangler/configuration/#images",
+          "description": "Binding to Cloudflare Images, and configuration for Images URL transformations\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.\n\nFor reference, see https://developers.cloudflare.com/workers/wrangler/configuration/#images",
+          "markdownDescription": "Binding to Cloudflare Images, and configuration for Images URL transformations\n\nNOTE: This field is not automatically inherited from the top level environment,\nand so must be specified in every named environment.\n\nFor reference, see https://developers.cloudflare.com/workers/wrangler/configuration/#images",
           "default": {}
         },
         "media": {
@@ -3001,14 +3022,35 @@
               "type": "boolean",
               "description": "Whether the Images binding should be remote or not in local development",
               "markdownDescription": "Whether the Images binding should be remote or not in local development"
+            },
+            "url_transformations": {
+              "type": "object",
+              "properties": {
+                "enabled": {
+                  "type": "boolean",
+                  "description": "Whether URL transformations are enabled for this Worker",
+                  "markdownDescription": "Whether URL transformations are enabled for this Worker"
+                },
+                "allowed_origins": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "Origins that images may be fetched from, in addition to the Worker's own zone, e.g. `\"images.example.com\"`, `\"*.example.com\"` or `\"example.com/images\"`. Don't include the protocol. Use `[\"*\"]` to allow any origin. At most 10 entries.",
+                  "markdownDescription": "Origins that images may be fetched from, in addition to the Worker's own zone,\ne.g. `\"images.example.com\"`, `\"*.example.com\"` or `\"example.com/images\"`.\nDon't include the protocol. Use `[\"*\"]` to allow any origin. At most 10 entries."
+                }
+              },
+              "required": [
+                "enabled"
+              ],
+              "additionalProperties": false,
+              "description": "Controls `/cdn-cgi/image/` URL transformations for requests served by this Worker",
+              "markdownDescription": "Controls `/cdn-cgi/image/` URL transformations for requests served by this Worker"
             }
           },
-          "required": [
-            "binding"
-          ],
           "additionalProperties": false,
-          "description": "Binding to Cloudflare Images\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.\n\nFor reference, see https://developers.cloudflare.com/workers/wrangler/configuration/#images",
-          "markdownDescription": "Binding to Cloudflare Images\n\nNOTE: This field is not automatically inherited from the top level environment,\nand so must be specified in every named environment.\n\nFor reference, see https://developers.cloudflare.com/workers/wrangler/configuration/#images",
+          "description": "Binding to Cloudflare Images, and configuration for Images URL transformations\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.\n\nFor reference, see https://developers.cloudflare.com/workers/wrangler/configuration/#images",
+          "markdownDescription": "Binding to Cloudflare Images, and configuration for Images URL transformations\n\nNOTE: This field is not automatically inherited from the top level environment,\nand so must be specified in every named environment.\n\nFor reference, see https://developers.cloudflare.com/workers/wrangler/configuration/#images",
           "default": {}
         },
         "media": {
@@ -4452,19 +4494,19 @@
       "type": "object",
       "properties": {
         "logpush": {
-          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-628442004818536"
+          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-636602004818536"
         },
         "observability": {
-          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-628442004818536"
+          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-636602004818536"
         },
         "limits": {
-          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-628442004818536"
+          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-636602004818536"
         },
         "placement": {
-          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-628442004818536"
+          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-636602004818536"
         },
         "cache": {
-          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-628442004818536"
+          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-636602004818536"
         },
         "define": {
           "type": "object",
@@ -5202,26 +5244,6 @@
           "markdownDescription": "Binding to the AI project.\n\nNOTE: This field is not automatically inherited from the top level environment,\nand so must be specified in every named environment.\n\nFor reference, see https://developers.cloudflare.com/workers/wrangler/configuration/#workers-ai",
           "default": {}
         },
-        "images": {
-          "type": "object",
-          "properties": {
-            "binding": {
-              "type": "string"
-            },
-            "remote": {
-              "type": "boolean",
-              "description": "Whether the Images binding should be remote or not in local development",
-              "markdownDescription": "Whether the Images binding should be remote or not in local development"
-            }
-          },
-          "required": [
-            "binding"
-          ],
-          "additionalProperties": false,
-          "description": "Binding to Cloudflare Images\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.\n\nFor reference, see https://developers.cloudflare.com/workers/wrangler/configuration/#images",
-          "markdownDescription": "Binding to Cloudflare Images\n\nNOTE: This field is not automatically inherited from the top level environment,\nand so must be specified in every named environment.\n\nFor reference, see https://developers.cloudflare.com/workers/wrangler/configuration/#images",
-          "default": {}
-        },
         "media": {
           "type": "object",
           "properties": {
@@ -5838,13 +5860,32 @@
             "bindings"
           ],
           "additionalProperties": false
+        },
+        "images": {
+          "type": "object",
+          "properties": {
+            "binding": {
+              "type": "string"
+            },
+            "remote": {
+              "type": "boolean",
+              "description": "Whether the Images binding should be remote or not in local development",
+              "markdownDescription": "Whether the Images binding should be remote or not in local development"
+            }
+          },
+          "required": [
+            "binding"
+          ],
+          "additionalProperties": false,
+          "description": "Binding to Cloudflare Images. `url_transformations` is not supported in previews.",
+          "markdownDescription": "Binding to Cloudflare Images. `url_transformations` is not supported in previews."
         }
       },
       "additionalProperties": false,
       "description": "Configuration for Worker Previews.\n\nThis defines the settings used when creating Preview deployments. Previews are branches of your Worker's main instance used to test features during feature development outside of production.\n\nThe `previews` block contains any intentionally divergent configuration intended solely for Previews, including:\n- All non-inheritable properties (environment variables and bindings like KV, D1, R2, etc.)\n- Select inheritable properties: `logpush`, `observability`, `limits`, `placement`, `cache`",
       "markdownDescription": "Configuration for Worker Previews.\n\nThis defines the settings used when creating Preview deployments.\nPreviews are branches of your Worker's main instance used to test features\nduring feature development outside of production.\n\nThe `previews` block contains any intentionally divergent configuration intended solely for Previews, including:\n- All non-inheritable properties (environment variables and bindings like KV, D1, R2, etc.)\n- Select inheritable properties: `logpush`, `observability`, `limits`, `placement`, `cache`"
     },
-    "interface-769040647-14884-25493-769040647-0-628442004818536": {
+    "interface-769040647-14884-25493-769040647-0-636602004818536": {
       "type": "object",
       "properties": {
         "name": {
