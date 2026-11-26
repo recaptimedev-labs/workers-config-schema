@@ -1608,6 +1608,37 @@
           "markdownDescription": "Specifies Flagship feature flag bindings that are bound to this Worker environment.\n\nNOTE: This field is not automatically inherited from the top level environment,\nand so must be specified in every named environment.",
           "default": []
         },
+        "realtimekit": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "binding": {
+                "type": "string",
+                "description": "The binding name used to refer to the bound RealtimeKit app.",
+                "markdownDescription": "The binding name used to refer to the bound RealtimeKit app."
+              },
+              "app_id": {
+                "type": "string",
+                "description": "The ID of the RealtimeKit app to bind to.",
+                "markdownDescription": "The ID of the RealtimeKit app to bind to."
+              },
+              "remote": {
+                "type": "boolean",
+                "description": "RealtimeKit has no local simulator. Set to `true` to use the remote RealtimeKit app during local dev.",
+                "markdownDescription": "RealtimeKit has no local simulator. Set to `true` to use the remote RealtimeKit app during local dev."
+              }
+            },
+            "required": [
+              "binding",
+              "app_id"
+            ],
+            "additionalProperties": false
+          },
+          "description": "Specifies RealtimeKit app bindings that are bound to this Worker environment.\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.",
+          "markdownDescription": "Specifies RealtimeKit app bindings that are bound to this Worker environment.\n\nNOTE: This field is not automatically inherited from the top level environment,\nand so must be specified in every named environment.",
+          "default": []
+        },
         "ratelimits": {
           "type": "array",
           "items": {
@@ -1770,6 +1801,41 @@
           },
           "description": "Specifies VPC networks that are bound to this Worker environment.\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.",
           "markdownDescription": "Specifies VPC networks that are bound to this Worker environment.\n\nNOTE: This field is not automatically inherited from the top level environment,\nand so must be specified in every named environment.",
+          "default": []
+        },
+        "oidc_tokens": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "binding": {
+                "type": "string",
+                "description": "The binding name used to refer to the OIDC token binding in the Worker.",
+                "markdownDescription": "The binding name used to refer to the OIDC token binding in the Worker."
+              },
+              "audience": {
+                "type": "string",
+                "description": "The `aud` claim of every token the binding issues: 1 to 2048 printable ASCII characters, with no whitespace.",
+                "markdownDescription": "The `aud` claim of every token the binding issues: 1 to 2048 printable ASCII characters, with no whitespace."
+              },
+              "alg": {
+                "type": "string",
+                "enum": [
+                  "ES256",
+                  "RS256"
+                ],
+                "description": "The JWS algorithm that signs the tokens. Defaults to ES256; use RS256 for verifiers that only accept RS256.",
+                "markdownDescription": "The JWS algorithm that signs the tokens. Defaults to ES256; use RS256 for verifiers that only accept RS256."
+              }
+            },
+            "required": [
+              "binding",
+              "audience"
+            ],
+            "additionalProperties": false
+          },
+          "description": "Specifies OIDC token bindings. Each one issues short-lived OpenID Connect tokens for this Worker's identity, for a single audience.\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.",
+          "markdownDescription": "Specifies OIDC token bindings. Each one issues short-lived OpenID Connect\ntokens for this Worker's identity, for a single audience.\n\nNOTE: This field is not automatically inherited from the top level environment,\nand so must be specified in every named environment.",
           "default": []
         },
         "pages_build_output_dir": {
@@ -3494,6 +3560,37 @@
           "markdownDescription": "Specifies Flagship feature flag bindings that are bound to this Worker environment.\n\nNOTE: This field is not automatically inherited from the top level environment,\nand so must be specified in every named environment.",
           "default": []
         },
+        "realtimekit": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "binding": {
+                "type": "string",
+                "description": "The binding name used to refer to the bound RealtimeKit app.",
+                "markdownDescription": "The binding name used to refer to the bound RealtimeKit app."
+              },
+              "app_id": {
+                "type": "string",
+                "description": "The ID of the RealtimeKit app to bind to.",
+                "markdownDescription": "The ID of the RealtimeKit app to bind to."
+              },
+              "remote": {
+                "type": "boolean",
+                "description": "RealtimeKit has no local simulator. Set to `true` to use the remote RealtimeKit app during local dev.",
+                "markdownDescription": "RealtimeKit has no local simulator. Set to `true` to use the remote RealtimeKit app during local dev."
+              }
+            },
+            "required": [
+              "binding",
+              "app_id"
+            ],
+            "additionalProperties": false
+          },
+          "description": "Specifies RealtimeKit app bindings that are bound to this Worker environment.\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.",
+          "markdownDescription": "Specifies RealtimeKit app bindings that are bound to this Worker environment.\n\nNOTE: This field is not automatically inherited from the top level environment,\nand so must be specified in every named environment.",
+          "default": []
+        },
         "ratelimits": {
           "type": "array",
           "items": {
@@ -3656,6 +3753,41 @@
           },
           "description": "Specifies VPC networks that are bound to this Worker environment.\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.",
           "markdownDescription": "Specifies VPC networks that are bound to this Worker environment.\n\nNOTE: This field is not automatically inherited from the top level environment,\nand so must be specified in every named environment.",
+          "default": []
+        },
+        "oidc_tokens": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "binding": {
+                "type": "string",
+                "description": "The binding name used to refer to the OIDC token binding in the Worker.",
+                "markdownDescription": "The binding name used to refer to the OIDC token binding in the Worker."
+              },
+              "audience": {
+                "type": "string",
+                "description": "The `aud` claim of every token the binding issues: 1 to 2048 printable ASCII characters, with no whitespace.",
+                "markdownDescription": "The `aud` claim of every token the binding issues: 1 to 2048 printable ASCII characters, with no whitespace."
+              },
+              "alg": {
+                "type": "string",
+                "enum": [
+                  "ES256",
+                  "RS256"
+                ],
+                "description": "The JWS algorithm that signs the tokens. Defaults to ES256; use RS256 for verifiers that only accept RS256.",
+                "markdownDescription": "The JWS algorithm that signs the tokens. Defaults to ES256; use RS256 for verifiers that only accept RS256."
+              }
+            },
+            "required": [
+              "binding",
+              "audience"
+            ],
+            "additionalProperties": false
+          },
+          "description": "Specifies OIDC token bindings. Each one issues short-lived OpenID Connect tokens for this Worker's identity, for a single audience.\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.",
+          "markdownDescription": "Specifies OIDC token bindings. Each one issues short-lived OpenID Connect\ntokens for this Worker's identity, for a single audience.\n\nNOTE: This field is not automatically inherited from the top level environment,\nand so must be specified in every named environment.",
           "default": []
         }
       },
@@ -4494,19 +4626,19 @@
       "type": "object",
       "properties": {
         "logpush": {
-          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-636602004818536"
+          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-649912004818536"
         },
         "observability": {
-          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-636602004818536"
+          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-649912004818536"
         },
         "limits": {
-          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-636602004818536"
+          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-649912004818536"
         },
         "placement": {
-          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-636602004818536"
+          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-649912004818536"
         },
         "cache": {
-          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-636602004818536"
+          "$ref": "#/definitions/interface-769040647-14884-25493-769040647-0-649912004818536"
         },
         "define": {
           "type": "object",
@@ -5685,6 +5817,37 @@
           "markdownDescription": "Specifies Flagship feature flag bindings that are bound to this Worker environment.\n\nNOTE: This field is not automatically inherited from the top level environment,\nand so must be specified in every named environment.",
           "default": []
         },
+        "realtimekit": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "binding": {
+                "type": "string",
+                "description": "The binding name used to refer to the bound RealtimeKit app.",
+                "markdownDescription": "The binding name used to refer to the bound RealtimeKit app."
+              },
+              "app_id": {
+                "type": "string",
+                "description": "The ID of the RealtimeKit app to bind to.",
+                "markdownDescription": "The ID of the RealtimeKit app to bind to."
+              },
+              "remote": {
+                "type": "boolean",
+                "description": "RealtimeKit has no local simulator. Set to `true` to use the remote RealtimeKit app during local dev.",
+                "markdownDescription": "RealtimeKit has no local simulator. Set to `true` to use the remote RealtimeKit app during local dev."
+              }
+            },
+            "required": [
+              "binding",
+              "app_id"
+            ],
+            "additionalProperties": false
+          },
+          "description": "Specifies RealtimeKit app bindings that are bound to this Worker environment.\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.",
+          "markdownDescription": "Specifies RealtimeKit app bindings that are bound to this Worker environment.\n\nNOTE: This field is not automatically inherited from the top level environment,\nand so must be specified in every named environment.",
+          "default": []
+        },
         "ratelimits": {
           "type": "array",
           "items": {
@@ -5849,6 +6012,41 @@
           "markdownDescription": "Specifies VPC networks that are bound to this Worker environment.\n\nNOTE: This field is not automatically inherited from the top level environment,\nand so must be specified in every named environment.",
           "default": []
         },
+        "oidc_tokens": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "binding": {
+                "type": "string",
+                "description": "The binding name used to refer to the OIDC token binding in the Worker.",
+                "markdownDescription": "The binding name used to refer to the OIDC token binding in the Worker."
+              },
+              "audience": {
+                "type": "string",
+                "description": "The `aud` claim of every token the binding issues: 1 to 2048 printable ASCII characters, with no whitespace.",
+                "markdownDescription": "The `aud` claim of every token the binding issues: 1 to 2048 printable ASCII characters, with no whitespace."
+              },
+              "alg": {
+                "type": "string",
+                "enum": [
+                  "ES256",
+                  "RS256"
+                ],
+                "description": "The JWS algorithm that signs the tokens. Defaults to ES256; use RS256 for verifiers that only accept RS256.",
+                "markdownDescription": "The JWS algorithm that signs the tokens. Defaults to ES256; use RS256 for verifiers that only accept RS256."
+              }
+            },
+            "required": [
+              "binding",
+              "audience"
+            ],
+            "additionalProperties": false
+          },
+          "description": "Specifies OIDC token bindings. Each one issues short-lived OpenID Connect tokens for this Worker's identity, for a single audience.\n\nNOTE: This field is not automatically inherited from the top level environment, and so must be specified in every named environment.",
+          "markdownDescription": "Specifies OIDC token bindings. Each one issues short-lived OpenID Connect\ntokens for this Worker's identity, for a single audience.\n\nNOTE: This field is not automatically inherited from the top level environment,\nand so must be specified in every named environment.",
+          "default": []
+        },
         "durable_objects": {
           "type": "object",
           "properties": {
@@ -5885,7 +6083,7 @@
       "description": "Configuration for Worker Previews.\n\nThis defines the settings used when creating Preview deployments. Previews are branches of your Worker's main instance used to test features during feature development outside of production.\n\nThe `previews` block contains any intentionally divergent configuration intended solely for Previews, including:\n- All non-inheritable properties (environment variables and bindings like KV, D1, R2, etc.)\n- Select inheritable properties: `logpush`, `observability`, `limits`, `placement`, `cache`",
       "markdownDescription": "Configuration for Worker Previews.\n\nThis defines the settings used when creating Preview deployments.\nPreviews are branches of your Worker's main instance used to test features\nduring feature development outside of production.\n\nThe `previews` block contains any intentionally divergent configuration intended solely for Previews, including:\n- All non-inheritable properties (environment variables and bindings like KV, D1, R2, etc.)\n- Select inheritable properties: `logpush`, `observability`, `limits`, `placement`, `cache`"
     },
-    "interface-769040647-14884-25493-769040647-0-636602004818536": {
+    "interface-769040647-14884-25493-769040647-0-649912004818536": {
       "type": "object",
       "properties": {
         "name": {
